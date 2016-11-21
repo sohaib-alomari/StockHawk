@@ -1,13 +1,35 @@
 <resources>
-  <string name="app_name">Stock Hawk</string>
+    <string name="app_name">Stock Hawk</string>
 
-  <string name="action_example">Example action</string>
+    <string name="action_example">Example action</string>
 
-  <string name="action_settings">Settings</string>
-  <string name="action_change_units">Change Units</string>
-  <string name="symbol_search">Symbol Search</string>
-  <string name="content_test">Search for a Stock Symbol</string>
-  <string name="input_hint">FB</string>
-  <string name="input_prefill"></string>
-  <string name="network_toast">Uh-oh! This app requires an internet connection</string>
+    <string name="action_settings">Settings</string>
+    <string name="No_internet">This App requires Internet connection Please check your network!!</string>
+
+    <string name="action_change_units">Change Units</string>
+    <string name="symbol_search">Symbol Search</string>
+    <string name="content_test">Search for a Stock Symbol</string>
+    <string name="input_hint">FB</string>
+    <string name="input_prefill"></string>
+
+    <string name="high">High :</string>
+
+    <string name="chart_content">Line Chart for 1 Year</string>
+
+    <string name="add_stock">Add New Stock</string>
+
+    <string name="bid">100</string>
+    <string name="change">100%</string>
+    <string name="ini_symbol">GOOG</string>
+
+
+
+    <string name="low">Low: </string>
+    <string name="data_duration">Showing Data For: </string>
+    <string name="duration_text">1 Year</string>
+
+
+    <string name="network_toast">Uh-oh! This app requires an internet connection</string>
+
+    <string name="widget_text">STOCK PRICES</string>
 </resources>

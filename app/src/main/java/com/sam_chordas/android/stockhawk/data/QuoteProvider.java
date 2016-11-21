@@ -16,6 +16,7 @@ public class QuoteProvider {
   static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
   interface Path{
+    String HISTORICAL_QUOTATION = "historical_quotation";
     String QUOTES = "quotes";
   }
 
@@ -46,4 +47,7 @@ public class QuoteProvider {
       return buildUri(Path.QUOTES, symbol);
     }
   }
+
+
+
 }
