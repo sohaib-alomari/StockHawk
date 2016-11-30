@@ -73,7 +73,7 @@ public class MyStocksDetailActivity extends AppCompatActivity {
 
 
 
-        stock_symbol = getIntent().getStringExtra("symbol");
+        stock_symbol = getIntent().getStringExtra(getString(R.string.Symbol));
         if (savedInstanceState == null) {
             downloadStockDetails();
         }
@@ -86,27 +86,27 @@ public class MyStocksDetailActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         if (isLoaded) {
-            bundle.putString("company_name", stock_Comp);
-            bundle.putStringArrayList("labels", labels);
+            bundle.putString(getString(R.string.Company_name), stock_Comp);
+            bundle.putStringArrayList(getString(R.string.Labels), labels);
 
             float[] valuesArray = new float[values.size()];
             for (int i = 0; i < valuesArray.length; i++) {
                 valuesArray[i] = values.get(i);
             }
-            bundle.putFloatArray("values", valuesArray);
+            bundle.putFloatArray(getString(R.string.Values), valuesArray);
         }
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        if (savedInstanceState != null && savedInstanceState.containsKey("company_name")) {
+        if (savedInstanceState != null && savedInstanceState.containsKey(getString(R.string.Company_name))) {
             isLoaded = true;
 
-            stock_Comp = savedInstanceState.getString("company_name");
-            labels = savedInstanceState.getStringArrayList("labels");
+            stock_Comp = savedInstanceState.getString(getString(R.string.Company_name));
+            labels = savedInstanceState.getStringArrayList(getString(R.string.Labels));
             values = new ArrayList<>();
 
-            float[] valuesArray = savedInstanceState.getFloatArray("values");
+            float[] valuesArray = savedInstanceState.getFloatArray(getString(R.string.Values));
             for (float f : valuesArray) {
                 values.add(f);
             }
@@ -122,7 +122,7 @@ public class MyStocksDetailActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("http://chartapi.finance.yahoo.com/instrument/1.0/" + stock_symbol + "/chartdata;type=quote;range=1y/json")
+                .url(getString(R.string.Request1) + stock_symbol + getString(R.string.Request2))
                 .build();
 
         client.newCall(request).enqueue(new Callback() {

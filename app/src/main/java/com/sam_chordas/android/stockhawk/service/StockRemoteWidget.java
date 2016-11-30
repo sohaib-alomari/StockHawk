@@ -64,17 +64,17 @@ public class StockRemoteWidget extends RemoteViewsService {
                 }
 
                 RemoteViews views = new RemoteViews(getPackageName(), R.layout.list_item_quote);
-                String symbol = data.getString(data.getColumnIndex("symbol"));
+                String symbol = data.getString(data.getColumnIndex(getString(R.string.Symbol)));
 
                 views.setTextViewText(R.id.stock_symbol, symbol);
-                views.setTextViewText(R.id.bid_price, data.getString(data.getColumnIndex("bid_price")));
-                views.setTextViewText(R.id.change, data.getString(data.getColumnIndex("percent_change")));
+                views.setTextViewText(R.id.bid_price, data.getString(data.getColumnIndex(getString(R.string.Bid_Price))));
+                views.setTextViewText(R.id.change, data.getString(data.getColumnIndex(getString(R.string.Percent_Change))));
 
 
-                if (data.getInt(data.getColumnIndex("is_up")) == 1) {
-                    views.setInt(R.id.change, "setBackgroundResource", R.drawable.percent_change_pill_green);
+                if (data.getInt(data.getColumnIndex(getString(R.string.is_Up))) == 1) {
+                    views.setInt(R.id.change, getString(R.string.set_back), R.drawable.percent_change_pill_green);
                 } else {
-                    views.setInt(R.id.change, "setBackgroundResource", R.drawable.percent_change_pill_red);
+                    views.setInt(R.id.change, getString(R.string.set_back), R.drawable.percent_change_pill_red);
                 }
 
                 return views;

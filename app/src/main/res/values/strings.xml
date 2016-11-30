@@ -1,35 +1,71 @@
 <resources>
-    <string name="app_name">Stock Hawk</string>
+    <string name="app_name" translatable="true">Stock Hawk</string>
 
-    <string name="action_example">Example action</string>
+    <string name="action_example" translatable="true">Example action</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="No_internet">This App requires Internet connection Please check your network!!</string>
+    <string name="action_settings" translatable="true">Settings</string>
+    <string name="No_internet" translatable="true">This App requires Internet connection Please check your network!!</string>
 
-    <string name="action_change_units">Change Units</string>
-    <string name="symbol_search">Symbol Search</string>
-    <string name="content_test">Search for a Stock Symbol</string>
-    <string name="input_hint">FB</string>
-    <string name="input_prefill"></string>
+    <string name="action_change_units" translatable="true">Change Units</string>
+    <string name="symbol_search" translatable="true">Symbol Search</string>
+    <string name="content_test" translatable="true">Search for a Stock Symbol</string>
+    <string name="input_hint" translatable="true">FB</string>
+    <string name="input_prefill" translatable="true"></string>
 
-    <string name="high">High :</string>
+    <string name="high" translatable="true">High :</string>
 
-    <string name="chart_content">Line Chart for 1 Year</string>
+    <string name="chart_content" translatable="true">Line Chart for 1 Year</string>
 
-    <string name="add_stock">Add New Stock</string>
+    <string name="add_stock" translatable="true">Add New Stock</string>
 
-    <string name="bid">100</string>
-    <string name="change">100%</string>
-    <string name="ini_symbol">GOOG</string>
-
-
-
-    <string name="low">Low: </string>
-    <string name="data_duration">Showing Data For: </string>
-    <string name="duration_text">1 Year</string>
+    <string name="bid" translatable="true">100</string>
+    <string name="change" translatable="true">100%</string>
+    <string name="ini_symbol" translatable="true">GOOG</string>
 
 
-    <string name="network_toast">Uh-oh! This app requires an internet connection</string>
 
-    <string name="widget_text">STOCK PRICES</string>
+    <string name="low" translatable="true">Low: </string>
+    <string name="data_duration" translatable="true">Showing Data For: </string>
+    <string name="duration_text" translatable="true">1 Year</string>
+
+
+    <string name="network_toast" translatable="true">Uh-oh! This app requires an internet connection</string>
+
+    <string name="widget_text" translatable="true">STOCK PRICES</string>
+    <string name="_id" translatable="true">_id</string>
+    <string name="Tag" translatable="true">tag</string>
+    <string name="Init" translatable="true">init</string>
+    <string name="Symbol" translatable="true">symbol</string>
+    <string name="Stock_exists" translatable="true">This stock is already saved!</string>
+    <string name="ADD" translatable="true">add</string>
+    <string name="Periodic" translatable="true">periodic</string>
+    <string name="Data_Outdated" translatable="true">Data is Outdated</string>
+    <string name="Outdated_Msg" translatable="true">Your Stock Data are outdated \n Check your internet connection to get the Most up to Date Stocks?</string>
+    <string name="Company_name" translatable="true">company_name</string>
+    <string name="Labels" translatable="true">labels</string>
+    <string name="Values" translatable="true">values</string>
+    <string name="Request1" translatable="true">http://chartapi.finance.yahoo.com/instrument/1.0/</string>
+    <string name="Request2" translatable="true">/chartdata;type=quote;range=1y/json</string>
+    <string name="Finance_Callback" translatable="true">"finance_charts_json_callback( "</string>
+    <string name="Meta" translatable="true">meta</string>
+    <string name="Series" translatable="true">series</string>
+    <string name="YYMM" translatable="true">yyyyMMdd</string>
+    <string name="Date" translatable="true">Date</string>
+    <string name="Close" translatable="true">close</string>
+    <string name="Nonet" translatable="true">No Internet...!!!</string>
+    <string name="NoInternet" translatable="true">No Internet Connection, Check You Network?</string>
+    <string name="Yes" translatable="true">yes</string>
+    <string name="Working" translatable="true">" Working"</string>
+    <string name="Roboto" translatable="true">fonts/Roboto-Light.ttf</string>
+    <string name="Symbol1" translatable="true">symbol</string>
+    <string name="Bid_Price" translatable="true">bid_price</string>
+    <string name="Is_Up" translatable="true">is_up</string>
+    <string name="Percent_Change" translatable="true">percent_change</string>
+    <string name="Change" translatable="true">change</string>
+    <string name="Stock_Intent" translatable="true">Stock Intent Service</string>
+    <string name="Why" translatable="true">why</string>
+    <string name="Wrong_Symbol" translatable="true">You Entered a Wrong Symbol !!\n Please Enter a right Symbol</string>
+    <string name="In_Try" translatable="true">IN the Try</string>
+    <string name="is_Up" translatable="true">is_up</string>
+    <string name="set_back" translatable="true">setBackgroundResource</string>
 </resources>

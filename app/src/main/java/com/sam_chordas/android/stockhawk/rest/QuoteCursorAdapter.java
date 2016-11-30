@@ -37,7 +37,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
   @Override
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
-    robotoLight = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Light.ttf");
+    robotoLight = Typeface.createFromAsset(mContext.getAssets(), mContext.getString(R.string.Roboto));
     View itemView = LayoutInflater.from(parent.getContext())
         .inflate(R.layout.list_item_quote, parent, false);
     ViewHolder vh = new ViewHolder(itemView);
@@ -46,10 +46,10 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
 
   @Override
   public void onBindViewHolder(final ViewHolder viewHolder, final Cursor cursor){
-    viewHolder.symbol.setText(cursor.getString(cursor.getColumnIndex("symbol")));
-    viewHolder.bidPrice.setText(cursor.getString(cursor.getColumnIndex("bid_price")));
+    viewHolder.symbol.setText(cursor.getString(cursor.getColumnIndex(mContext.getString(R.string.Symbol1))));
+    viewHolder.bidPrice.setText(cursor.getString(cursor.getColumnIndex(mContext.getString(R.string.Bid_Price))));
     int sdk = Build.VERSION.SDK_INT;
-    if (cursor.getInt(cursor.getColumnIndex("is_up")) == 1){
+    if (cursor.getInt(cursor.getColumnIndex(mContext.getString(R.string.Is_Up))) == 1){
       if (sdk < Build.VERSION_CODES.JELLY_BEAN){
         viewHolder.change.setBackgroundDrawable(
             mContext.getResources().getDrawable(R.drawable.percent_change_pill_green));
@@ -67,9 +67,9 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
       }
     }
     if (Utils.showPercent){
-      viewHolder.change.setText(cursor.getString(cursor.getColumnIndex("percent_change")));
+      viewHolder.change.setText(cursor.getString(cursor.getColumnIndex(mContext.getString(R.string.Percent_Change))));
     } else{
-      viewHolder.change.setText(cursor.getString(cursor.getColumnIndex("change")));
+      viewHolder.change.setText(cursor.getString(cursor.getColumnIndex(mContext.getString(R.string.Change))));
     }
   }
 

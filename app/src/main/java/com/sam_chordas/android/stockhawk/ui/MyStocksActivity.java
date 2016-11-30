@@ -81,7 +81,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     mServiceIntent = new Intent(this, StockIntentService.class);
     if (savedInstanceState == null){
       // Run the initialize task service so that some stocks appear upon an empty database
-      mServiceIntent.putExtra("tag", "init");
+      mServiceIntent.putExtra(getString(R.string.Tag), getString(R.string.Init));
       if (isConnected){
         startService(mServiceIntent);
       } else{
@@ -99,7 +99,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 //TODO:
                 String symbol = ((TextView) v.findViewById(R.id.stock_symbol)).getText().toString();
                 Intent intent = new Intent(mContext, MyStocksDetailActivity.class);
-                intent.putExtra("symbol", symbol);
+                intent.putExtra(getString(R.string.Symbol), symbol);
                 startActivity(intent);
               }
             }));
@@ -123,15 +123,15 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                       new String[] { input.toString() }, null);
                   if (c.getCount() != 0) {
                     Toast toast =
-                        Toast.makeText(MyStocksActivity.this, "This stock is already saved!",
+                        Toast.makeText(MyStocksActivity.this, R.string.Stock_exists,
                             Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
                     toast.show();
                     return;
                   } else {
                     // Add the stock to DB
-                    mServiceIntent.putExtra("tag", "add");
-                    mServiceIntent.putExtra("symbol", input.toString());
+                    mServiceIntent.putExtra(getString(R.string.Tag), getString(R.string.ADD));
+                    mServiceIntent.putExtra(getString(R.string.Symbol), input.toString());
                     startService(mServiceIntent);
                   }
                 }
@@ -152,7 +152,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     if (isConnected){
       long period = 3600L;
       long flex = 10L;
-      String periodicTag = "periodic";
+      String periodicTag = getString(R.string.Periodic);
 
       // create a periodic task to pull stocks once every hour after the app has been opened. This
       // is so Widget data stays up to date.
@@ -185,8 +185,8 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
 
     if (b.moveToNext()) {
       new AlertDialog.Builder(mContext)
-              .setTitle("Data is Outdated")
-              .setMessage("Your Stock Data are outdated \n Check your internet connection to get the Most up to Date Stocks?")
+              .setTitle(R.string.Data_Outdated)
+              .setMessage(R.string.Outdated_Msg)
               .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                   // continue with delete
